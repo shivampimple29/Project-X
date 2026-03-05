@@ -6,8 +6,12 @@ import {
   faClock,
   faPlug
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 function StationDetail() {
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   const station = {
     name: "EcoPlug Station",
     operator: "EVgo India",

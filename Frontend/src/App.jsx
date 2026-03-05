@@ -9,6 +9,7 @@ import ChargingTips from "./components/ChargingTips";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StationList from "./components/Stationlist/StationList";
 import StationDetail from "./components/Stationlist/StationDetail";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         {/* Charging Tips Page */}
         <Route path="/charging-tips" element={<ChargingTips />} />
 
+<Route path="/contact" element={<Contact />} />
         {/* Add Station */}
         {/* <Route path="/add-station" element={<AddStation />} /> */}
 

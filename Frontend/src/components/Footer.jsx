@@ -57,7 +57,7 @@ function Footer() {
               <h3 className="text-white font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a href="#station-list" className="hover:text-white transition">
                     Find Stations
                   </a>
                 </li>
@@ -94,9 +94,8 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition">
-                    Contact Us
-                  </a>
+                
+                  <Link to="/contact" className="hover:text-white transition">Contact Us</Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition">
