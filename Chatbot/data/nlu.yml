@@ -1,0 +1,95 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+    - hello there
+    - hi there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - good night
+    - goodbye for now
+    - thanks bye
+
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - thanks a lot
+    - thank you so much
+    - appreciate it
+
+- intent: help
+  examples: |
+    - help
+    - what can you do
+    - how can you help
+    - what do you do
+    - help me
+    - show help
+
+- intent: find_station_by_city
+  examples: |
+    - Find stations in [Pune](city)
+    - Show me EV chargers in [Mumbai](city)
+    - Are there stations in [Delhi](city)?
+    - List charging points in [Bangalore](city)
+    - I need a charging station in [Chennai](city)
+    - Find EV stations near [Hyderabad](city)
+    - Show charging points in [Kolkata](city)
+    - Any stations in [Ahmedabad](city)?
+    - Find chargers in [Lb Nagar](city)
+    - Stations in [Coimbatore](city)
+    - EV charging in [Kerala](city)
+    - Where can I charge in [Odisha](city)?
+    - Show me stations in [Jaipur](city)
+    - Are there EV chargers in [Lucknow](city)?
+
+- intent: find_nearest_station
+  examples: |
+    - What's the nearest station?
+    - Find nearest EV charger
+    - Is there a station near me?
+    - Where can I charge nearby?
+    - Closest charging station
+    - Find station close to me
+    - Nearest EV charging point
+    - I need a charger nearby
+    - Show me the closest station
+    - Where is the closest charger?
+
+- intent: get_station_details
+  examples: |
+    - Tell me about [Nikol EV](station_name)
+    - Show details for [Tata Power](station_name)
+    - What chargers at [Ather Grid](station_name)?
+    - More info on [Blaze Fast Charger](station_name)
+    - Details of [Jio-bp pulse](station_name)
+    - Tell me about the [BPCL Charging Station](station_name)
+    - Information for [Hindustan Petroleum](station_name)
+    - What's available at [Electric Vehicle Charging Station](station_name)?
+    - Show me [WARIVO](station_name) details
+    - Tell me more about [Adani Charging Station](station_name)
+    - Give me details of [Zeon Charging](station_name)
+
+- intent: inform_location
+  examples: |
+    - I'm in [Pune](city)
+    - I am in [Mumbai](location)
+    - My location is [Delhi](city)
+    - I'm at [Bangalore](location)
+    - [Chennai](city)
+    - Currently in [Hyderabad](location)
+    - I am near [Kolkata](city)
+    - [Ahmedabad](location)
+    - I'm located in [Jaipur](city)

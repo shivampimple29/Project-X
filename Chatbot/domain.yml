@@ -1,0 +1,80 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - find_station_by_city
+  - find_nearest_station
+  - get_station_details
+  - inform_location
+  - thank
+  - help
+
+entities:
+  - city
+  - station_name
+  - location
+
+slots:
+  city:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: city
+      
+  station_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: station_name
+      
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: location
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm your EV Charging Station Assistant. How can I help you today?"
+  - text: "Hi there! I can help you find EV charging stations. Try asking 'Find stations in Pune' or 'What's the nearest station?'"
+
+  utter_goodbye:
+  - text: "Goodbye! Drive electric and stay charged!"
+  - text: "See you later! Happy charging!"
+
+  utter_ask_location:
+  - text: "Sure! Could you tell me your current city or share your location?"
+  - text: "I'd be happy to help! What city are you in right now?"
+
+  utter_ask_city:
+  - text: "Which city would you like to search for stations in?"
+  - text: "Please tell me the city name."
+
+  utter_ask_station_name:
+  - text: "Which station would you like details for? Please tell me the name."
+  - text: "Sure, what's the name of the station?"
+
+  utter_thank:
+  - text: "You're welcome! Happy to help with your EV needs!"
+  - text: "Glad I could assist! Drive safe!"
+
+  utter_help:
+  - text: "I can help you with:\n- Finding stations by city (e.g., 'Find stations in Pune')\n- Finding the nearest station (e.g., 'Nearest station')\n- Getting station details (e.g., 'Tell me about Nikol EV')\nWhat would you like to do?"
+
+  utter_no_stations:
+  - text: "Sorry, I couldn't find any stations in {city}. Would you like to try another city?"
+  
+  utter_no_station_match:
+  - text: "Sorry, I couldn't find a station named '{station_name}'. Can you provide more details or try another name?"
+
+  utter_default:
+  - text: "I'm not sure I understood. Try asking about stations by city, nearest station, or station details."
+
+actions:
+  - action_find_by_city
+  - action_find_nearest
+  - action_get_details

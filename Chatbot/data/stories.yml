@@ -1,0 +1,108 @@
+version: "3.1"
+
+stories:
+- story: greet and help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: help
+  - action: utter_help
+
+- story: find by city happy path
+  steps:
+  - intent: find_station_by_city
+    entities:
+    - city: Pune
+  - action: action_find_by_city
+
+- story: find by city without city name
+  steps:
+  - intent: find_station_by_city
+  - action: utter_ask_city
+  - intent: inform_location
+    entities:
+    - city: Pune
+  - action: action_find_by_city
+
+- story: nearest station with location
+  steps:
+  - intent: find_nearest_station
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: Pune
+  - action: action_find_nearest
+
+- story: station details happy path
+  steps:
+  - intent: get_station_details
+    entities:
+    - station_name: Nikol EV
+  - action: action_get_details
+
+- story: station details without name
+  steps:
+  - intent: get_station_details
+  - action: utter_ask_station_name
+  - intent: inform_location
+    entities:
+    - station_name: Tata Power
+  - action: action_get_details
+
+- story: thank you
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- story: city search with different city
+  steps:
+  - intent: find_station_by_city
+    entities:
+    - city: Mumbai
+  - action: action_find_by_city
+
+- story: nearest station fallback
+  steps:
+  - intent: find_nearest_station
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: Bangalore
+  - action: action_find_nearest
+
+- story: ask for city when searching (slot condition version)
+  steps:
+  - intent: find_station_by_city
+  - action: utter_ask_city
+  - intent: inform_location
+    entities:
+    - city: Chennai
+  - action: action_find_by_city
+
+- story: ask for station name for details (slot condition version)
+  steps:
+  - intent: get_station_details
+  - action: utter_ask_station_name
+  - intent: inform_location
+    entities:
+    - station_name: Ather Grid
+  - action: action_get_details
+
+- story: ask for location for nearest (slot condition version)
+  steps:
+  - intent: find_nearest_station
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: Hyderabad
+  - action: action_find_nearest
