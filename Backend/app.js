@@ -6,6 +6,7 @@ const cors = require("cors");
 const path = require("path");
 const port = process.env.PORT || 8000;
 
+const healthRoutes = require("./routes/health.routes");
 const bookingRoutes = require("./routes/booking.routes");
 const stationRoutes = require("./routes/station.routes");
 const authRoutes = require("./routes/auth.routes");
@@ -43,6 +44,7 @@ app.use("/api/auth",     authRoutes);
 app.use("/api/stations", stationRoutes);
 app.use("/api/users",    userRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/health", healthRoutes);
 
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
