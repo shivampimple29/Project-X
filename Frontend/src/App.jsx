@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
 import ScrollToTop from "./components/ScrollToTop";
-import ProtectedRoute from "./components/ProtectedRoute"; 
+import ProtectedRoute from "./components/ProtectedRoute";
+import Analytics from "./components/Analytics"; 
 
 /* Landing */
 import Hero from "./components/landing_page/Hero";
@@ -50,6 +51,7 @@ import NotFound from "./components/NotFound";
 function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <ScrollToTop />
       <Navbar />
       <Chatbot />
